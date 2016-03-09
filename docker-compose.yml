@@ -17,7 +17,7 @@ db:
 web:
   build: ./ghost
   ports:
-    - "3003:2368"
+    - "2368:2368"
   links:
     - db:database
   volumes_from:
@@ -26,9 +26,15 @@ web:
     - DB_HOST=database
     - DB_CLIENT=mysql
     - DB_USER=ghost
-    - DB_PASSWORD=zOrnpowdd3H2MwqP1Vn0a1x
+    - DB_PASSWORD=foobarbaz
     - DB_PORT=3305
     - DB_DATABASE=ghost
     - NODE_ENV=production
-    - URL=http://dockercluster.tk
-    - THEME_SOURCE=https://github.com/oswaldoacauan/ghostium # Git repo to fetch theme from
+    - URL=http://blog.mewm.org
+    - THEME_SOURCE=https://github.com/mewm/ghost-theme # Git repo to fetch theme from
+    - NEW_RELIC_LICENSE_KEY=<api key here>
+newrelicservermon:
+  image: uzyexe/newrelic
+  hostname: charmander.mewm.org
+  environment:
+    - NEW_RELIC_LICENSE_KEY=<api key here>
