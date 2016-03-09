@@ -4,6 +4,7 @@ data:
     - /var/lib/mysql
     - /var/www/99999101AC/ghost/content
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
+  restart: always
 db:
   build: ./mariadb
   ports:
@@ -14,6 +15,7 @@ db:
     - DEFAULT_USER=ghost # A user with this name will be created
     - DEFAULT_PASS=foobarbaz
     - PORT=3305
+  restart: always
 web:
   build: ./ghost
   ports:
@@ -33,8 +35,10 @@ web:
     - URL=http://dockercluster.tk
     - THEME_SOURCE=https://github.com/mewm/ghost-theme # Git repo to fetch theme from
     - NEW_RELIC_LICENSE_KEY=<api key here>
+  restart: always
 newrelicservermon:
   image: uzyexe/newrelic
   hostname: charmander.mewm.org
   environment:
     - NEW_RELIC_LICENSE_KEY=<api key here>
+  restart: always
