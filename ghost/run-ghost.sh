@@ -14,5 +14,5 @@ else
     git clone ${THEME_SOURCE} $HOME/content/themes/casper
 fi
 
-chown -R ghost /var/www/ghost
+chown -R ghost /var/www/99999101AC/ghost
 su ghost -c "npm start"
