@@ -2,7 +2,7 @@ data:
   build: ./data
   volumes:
     - /var/lib/mysql
-    - /var/www/ghost/content
+    - /var/www/99999101AC/ghost/content
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
 db:
   build: ./mariadb
@@ -17,7 +17,7 @@ db:
 web:
   build: ./ghost
   ports:
-    - "2368:2368"
+    - "3003:2368"
   links:
     - db:database
   volumes_from:
@@ -30,7 +30,7 @@ web:
     - DB_PORT=3305
     - DB_DATABASE=ghost
     - NODE_ENV=production
-    - URL=http://blog.mewm.org
+    - URL=http://dockercluster.tk
     - THEME_SOURCE=https://github.com/mewm/ghost-theme # Git repo to fetch theme from
     - NEW_RELIC_LICENSE_KEY=<api key here>
 newrelicservermon:
