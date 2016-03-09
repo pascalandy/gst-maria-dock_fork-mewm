@@ -38,7 +38,7 @@ RUN buildDeps=' \
 	&& npm cache clean \
 	&& rm -rf /tmp/npm*
 
-ENV GHOST_CONTENT /var/lib/ghost
+ENV GHOST_CONTENT /var/www/ghost
 RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
 VOLUME $GHOST_CONTENT
 
