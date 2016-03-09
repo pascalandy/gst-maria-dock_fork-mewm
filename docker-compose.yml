@@ -33,6 +33,7 @@ web:
     - DB_DATABASE=ghost
     - NODE_ENV=production
     - URL=http://dockercluster.tk
+    - VIRTUAL_HOST=dockercluster.tk
     - THEME_SOURCE=https://github.com/mewm/ghost-theme # Git repo to fetch theme from
     - NEW_RELIC_LICENSE_KEY=<api key here>
   restart: always
