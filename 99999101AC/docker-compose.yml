@@ -2,7 +2,7 @@ data:
   build: ./data
   volumes:
     - /var/lib/mysql
-    - /var/www/99999101AA/ghost/content
+    - /var/www/99999101AC/ghost/content
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
   restart: always
 db:
@@ -12,7 +12,7 @@ db:
   volumes_from:
     - data
   environment:
-    - DEFAULT_USER=99999101AA # A user with this name will be created
+    - DEFAULT_USER=99999101AC # A user with this name will be created
     - DEFAULT_PASS=BWiaMCx2tpELAP34T99999101AAz
     - PORT=3305
   restart: always
@@ -27,7 +27,7 @@ web:
   environment:
     - DB_HOST=database
     - DB_CLIENT=mysql
-    - DB_USER=99999101AA
+    - DB_USER=99999101AC
     - DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz
     - DB_PORT=3305
     - DB_DATABASE=ghost
