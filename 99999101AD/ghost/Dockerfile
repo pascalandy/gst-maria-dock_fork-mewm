@@ -1,6 +1,7 @@
 FROM node:0.10-wheezy
 MAINTAINER Pascal Andy
 
+ENV PATH_CLIENT_ID="/var/www/99999101AD/"
 ENV GHOST_VERSION 0.7.8
 
 RUN buildDeps=' \
