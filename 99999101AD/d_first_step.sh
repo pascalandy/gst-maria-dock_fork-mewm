@@ -1,16 +1,6 @@
-_DEPLOYMENT_ID="99999101AD" && echo _DEPLOYMENT_ID &&
-_USR_BRANCH="pascal" && echo _USR_BRANCH &&
-_GIT_CLONE_URL="https://github.com/pascalandy/gst-maria-dock_fork-mewm.git" && echo _GIT_CLONE_URL &&
-cd /var/www/ && echo Creating the directory for $_DEPLOYMENT_ID &&
-sudo mkdir $_DEPLOYMENT_ID &&
-sudo chmod 777 -R /var/www/ &&
-cd $_DEPLOYMENT_ID &&
-echo "Cloning the configs from branch $_USR_BRANCH" &&
-sudo git clone -b $_USR_BRANCH $_GIT_CLONE_URL ghost &&
-cd ghost && pwd && echo Here are the file we just cloned && ls -la &&
-docker-compose up -d
+# The code at this point is stable.
+# Time to add the nginx discovery modules
 
-# New config as our git repo containes ALL our configs
 _DEPLOYMENT_ID="99999101AD" && echo "The ENV _DEPLOYMENT_ID value is $_DEPLOYMENT_ID" &&
 _USR_BRANCH="pascal" && echo "The ENV _USR_BRANCH value is $_USR_BRANCH" &&
 _GIT_CLONE_URL="https://github.com/pascalandy/gst-maria-dock_fork-mewm.git" && echo "The ENV _GIT_CLONE_URL value is $_GIT_CLONE_URL" &&
