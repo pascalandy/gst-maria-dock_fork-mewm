@@ -1,7 +1,7 @@
 FROM node:0.10-wheezy
 MAINTAINER Pascal Andy
 
-ENV PATH_DEPLOYMENT "/var/www/99999101AA/"
+ENV PATH_DEPLOYMENT "/var/www/99999101AC/"
 ENV GHOST_VERSION 0.7.8
 
 RUN buildDeps=' \
