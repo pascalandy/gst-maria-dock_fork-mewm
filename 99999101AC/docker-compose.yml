@@ -12,14 +12,14 @@ db:
   volumes_from:
     - data
   environment:
-    - DEFAULT_USER=ghost # A user with this name will be created
-    - DEFAULT_PASS=foobarbaz
+    - DEFAULT_USER=99999101AC # A user with this name will be created
+    - DEFAULT_PASS=BWiaMCx2tpELAP34T99999101AAz
     - PORT=3305
   restart: always
 web:
   build: ./ghost
   ports:
-    - "3003:2368"
+    - "10001:2368"
   links:
     - db:database
   volumes_from:
@@ -27,8 +27,8 @@ web:
   environment:
     - DB_HOST=database
     - DB_CLIENT=mysql
-    - DB_USER=ghost
-    - DB_PASSWORD=foobarbaz
+    - DB_USER=99999101AC
+    - DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz
     - DB_PORT=3305
     - DB_DATABASE=ghost
     - NODE_ENV=production
