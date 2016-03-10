@@ -1,7 +1,6 @@
 FROM node:0.10-wheezy
 MAINTAINER Pascal Andy
 
-ENV PATH_DEPLOYMENT "/var/www/99999101AD/"
 ENV GHOST_VERSION 0.7.8
 
 RUN buildDeps=' \
@@ -10,8 +9,8 @@ RUN buildDeps=' \
 		python \
 		unzip \
 	' \
-RUN mkdir -p $PATH_DEPLOYMENT
-RUN cd $PATH_DEPLOYMENT
+RUN mkdir -p $PATH_CLIENT_ID
+RUN cd $PATH_CLIENT_ID
 RUN PWD
 RUN curl -sSL "https://ghost.org/archives/ghost-${GHOST_VERSION}.zip" -o ghost.zip
 RUN apt-get update && apt-get install zip unzip
@@ -19,8 +18,7 @@ RUN unzip ghost.zip -d /ghost
 RUN rm -f ghost.zip
 RUN npm install sqlite3 --build-from-source
 
-ENV HOME ${PATH_DEPLOYMENT}/ghost/
-    # '$HOME path looks like /var/www/999999101XZ/ghost'
+ENV HOME="${PATH_CLIENT_ID}/ghost/"
 
 RUN cd $HOME
 RUN npm install --production

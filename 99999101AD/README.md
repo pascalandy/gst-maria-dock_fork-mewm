@@ -1,3 +1,5 @@
-# Ghost and MariaDB with Docker using fig
+# Configuration steps
 
-This project hosts the infrastructure to http://blog.mewm.org
+tk 2016-03-10_07h55
+
+by Pascal Andy
