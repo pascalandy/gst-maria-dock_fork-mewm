@@ -1,10 +1,11 @@
 FROM busybox
 MAINTAINER Pascal Andy
 
-# Note: The ENV $PATH_CLIENT_ID variable is declared in the docker-compose
+#                         <VALUE TO UPDATE>
+ENV PATH_CLIENT_ID "/var/www/99999101AD/ghost/content"
 
 # Create default ghost content dirs
-RUN mkdir -p $PATH_CLIENT_ID/ghost/content/apps
-RUN mkdir -p $PATH_CLIENT_ID/ghost/content/images
-RUN mkdir -p $PATH_CLIENT_ID/ghost/content/themes
-RUN mkdir -p $PATH_CLIENT_ID/ghost/content/data
+RUN mkdir -p $PATH_CLIENT_ID/apps
+RUN mkdir -p $PATH_CLIENT_ID/images
+RUN mkdir -p $PATH_CLIENT_ID/themes
+RUN mkdir -p $PATH_CLIENT_ID/data
