@@ -1,7 +1,7 @@
 FROM busybox
 MAINTAINER Pascal Andy
 
-#                         <VALUE TO UPDATE>
+#                         @@@ VALUE @@@
 ENV PATH_CLIENT_ID "/var/www/99999101AD/ghost/content"
 
 # Create default ghost content dirs
