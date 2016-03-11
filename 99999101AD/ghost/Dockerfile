@@ -29,7 +29,6 @@ WORKDIR /var/www/99999101AD/ghost/
 #                     <__________>
 ADD config.js /var/www/99999101AD/ghost/config.js
 ADD run-ghost.sh /run-ghost.sh
-ADD install_newrelic.sh /install_newrelic.sh
 RUN chmod 0500 /run-ghost.sh
 
 CMD /run-ghost.sh
