@@ -15,14 +15,14 @@ nginx:
   ports:
     - "80:80"
     #- "443:443" Only add if you want ssl
-
 dockergen:
   image: jwilder/docker-gen
   environment:
-    - DEFAULT_HOST=something.tk
+    - DEFAULT_HOST=cloudwait.com
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
     - /srv/nginx-proxy:/etc/docker-gen/templates
+    - /etc/docker-gen/templates/nginx.tmpl:/etc/nginx/conf.d/default.conf
   volumes_from:
     - nginx
 db:

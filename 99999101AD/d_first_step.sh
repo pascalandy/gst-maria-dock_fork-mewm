@@ -1,6 +1,5 @@
 # The code at this point is stable.
 # Time to add the nginx discovery modules
-#
 
 _DEPLOYMENT_ID="99999101AD" && echo "The ENV _DEPLOYMENT_ID value is $_DEPLOYMENT_ID" &&
 _USR_BRANCH="pascal" && echo "The ENV _USR_BRANCH value is $_USR_BRANCH" &&
