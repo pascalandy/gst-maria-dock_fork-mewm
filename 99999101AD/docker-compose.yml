@@ -8,21 +8,9 @@ data:
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
   restart: always
 nginx:
-  image: nginx:latest
-  volumes:
-    - /tmp/nginx:/etc/nginx/conf.d
-    - /srv/nginx/certs:/etc/nginx/certs
-  ports:
-    - "80:80"
-    #- "443:443" Only add if you want ssl
-dockergen:
-  image: jwilder/docker-gen
-  environment:
-    - DEFAULT_HOST=cloudwait.com
-  volumes:
-    - /var/run/docker.sock:/tmp/docker.sock:ro
-    - /srv/nginx-proxy:/etc/docker-gen/templates
-    - /etc/docker-gen/templates/nginx.tmpl:/etc/nginx/conf.d/default.conf
+  CMD: ./nginx/run.sh
+docker-gen:
+  CMD: ./nginx/run.sh
   volumes_from:
     - nginx
 db:
@@ -48,6 +36,8 @@ web:
     - "DB_USER=99999101AD"
     - "URL=http://dockercluster.tk"
     - "VIRTUAL_HOST=dockercluster.tk"
+    - "LETSENCRYPT_HOST=dockercluster.tk"
+    - "LETSENCRYPT_EMAIL=relations@publiodigital.com"
     - "DB_HOST=database"
     - "DB_CLIENT=mysql"
     - "DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz"
