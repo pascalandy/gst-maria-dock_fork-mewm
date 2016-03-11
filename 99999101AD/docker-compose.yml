@@ -6,13 +6,6 @@ data:
   environment:
     - "PATH_CLIENT_ID=/var/www/99999101AD/"
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
-  restart: always
-nginx:
-  CMD: ./nginx/run.sh
-docker-gen:
-  CMD: ./nginx/run.sh
-  volumes_from:
-    - nginx
 db:
   build: ./mariadb
   ports:
