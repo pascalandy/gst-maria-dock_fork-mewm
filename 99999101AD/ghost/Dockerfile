@@ -1,6 +1,8 @@
 FROM node:0.10-wheezy
 MAINTAINER Pascal Andy
 
+ENV GHOST_VERSION 0.7.8
+
 # Download and install latest version of ghost
 RUN cd /tmp
 RUN wget https://ghost.org/zip/ghost-latest.zip
