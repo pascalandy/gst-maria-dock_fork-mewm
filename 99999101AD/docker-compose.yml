@@ -4,7 +4,7 @@ data:
     - /var/lib/mysql
     - /var/www/99999101AD/ghost/content
   environment:
-    - PATH_CLIENT_ID="/var/www/99999101AD/"
+    - "PATH_CLIENT_ID=/var/www/99999101AD/"
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
   restart: always
 
@@ -15,9 +15,9 @@ db:
   volumes_from:
     - data
   environment:
-    - DEFAULT_USER=99999101AD # A user with this name will be created
-    - DEFAULT_PASS=BWiaMCx2tpELAP34T99999101AAz
-    - PORT=3305
+    - "DEFAULT_USER=99999101AD" # A user with this name will be created
+    - "DEFAULT_PASS=BWiaMCx2tpELAP34T99999101AAz"
+    - "PORT=3305"
   restart: always
 
 web:
@@ -29,14 +29,14 @@ web:
   volumes_from:
     - data
   environment:
-    - URL=http://dockercluster.tk
-    - VIRTUAL_HOST=dockercluster.tk
-    - DB_HOST=database
-    - DB_CLIENT=mysql
-    - DB_USER=99999101AD
-    - DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz
-    - DB_PORT=3305
-    - DB_DATABASE=ghost
-    - NODE_ENV=production
-    - THEME_SOURCE=https://github.com/mewm/ghost-theme # Git repo to fetch theme from
+    - "DB_USER=99999101AD"
+    - "URL=http://dockercluster.tk"
+    - "VIRTUAL_HOST=dockercluster.tk"
+    - "DB_HOST=database"
+    - "DB_CLIENT=mysql"
+    - "DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz"
+    - "DB_PORT=3305"
+    - "DB_DATABASE=ghost"
+    - "NODE_ENV=production"
+    - "THEME_SOURCE=https://github.com/mewm/ghost-theme" # Git repo to fetch theme from
   restart: always
