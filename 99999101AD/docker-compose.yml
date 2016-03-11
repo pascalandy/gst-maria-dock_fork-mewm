@@ -7,6 +7,23 @@ data:
     - "PATH_CLIENT_ID=/var/www/99999101AD/"
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
   restart: always
+nginx-proxy:
+  build: ./nginx-proxy
+  volumes:
+    - /tmp/nginx:/etc/nginx/conf.d
+    - /srv/nginx/certs:/etc/nginx/certs
+  ports:
+    - "80:80"
+    #- "443:443" Only add if you want ssl
+dockergen:
+  image: jwilder/docker-gen
+  environment:
+    - DEFAULT_HOST=something.tk
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - /srv/nginx-proxy:/etc/docker-gen/templates
+  volumes_from:
+    - nginx
 
 db:
   build: ./mariadb
