@@ -1,6 +1,7 @@
 # The code at this point is stable.
 # Time to add the nginx discovery modules
-#              <__________>
+#
+
 _DEPLOYMENT_ID="99999101AD" && echo "The ENV _DEPLOYMENT_ID value is $_DEPLOYMENT_ID" &&
 _USR_BRANCH="pascal" && echo "The ENV _USR_BRANCH value is $_USR_BRANCH" &&
 _GIT_CLONE_URL="https://github.com/pascalandy/gst-maria-dock_fork-mewm.git" && echo "The ENV _GIT_CLONE_URL value is $_GIT_CLONE_URL" &&
