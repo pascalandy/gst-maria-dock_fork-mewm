@@ -6,8 +6,6 @@ data:
   environment:
     - "PATH_CLIENT_ID=/var/www/99999101AD/"
 #    - /Users/mewm/www/ghost-theme:/var/www/ghost/content/themes/casper This can be added for theme development. Comment out the theme stuff in run-ghost.sh before rebuilding
-  restart: always
-
 db:
   build: ./mariadb
   ports:
@@ -19,7 +17,6 @@ db:
     - "DEFAULT_PASS=BWiaMCx2tpELAP34T99999101AAz"
     - "PORT=3305"
   restart: always
-
 web:
   build: ./ghost
   ports:
@@ -32,6 +29,8 @@ web:
     - "DB_USER=99999101AD"
     - "URL=http://dockercluster.tk"
     - "VIRTUAL_HOST=dockercluster.tk"
+    - "LETSENCRYPT_HOST=dockercluster.tk"
+    - "LETSENCRYPT_EMAIL=relations@publiodigital.com"
     - "DB_HOST=database"
     - "DB_CLIENT=mysql"
     - "DB_PASSWORD=BWiaMCx2tpELAP34T99999101AAz"
